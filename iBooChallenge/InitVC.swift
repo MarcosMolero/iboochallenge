@@ -9,14 +9,34 @@
 import Foundation
 import UIKit
 
-class InitVC: UIViewController {
+class InitVC: UIViewController, InitViewDelegate {
     
+    let screenW :CGFloat = UIScreen.main.bounds.width
+    let screenH :CGFloat = UIScreen.main.bounds.height
+    
+    // ===================================================================================
+    // MARK:                    DRAW SCREEN
+    // ===================================================================================
+    func drawScreen() {
+        let initView = InitView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH))
+        initView.delegate = self
+        
+        self.view.addSubview(initView)
+    }
+    
+    // ===================================================================================
+    // MARK:                    BUTTON FUNC
+    // ===================================================================================
+    func didPressBtnInit(_ sender: UIButton) {
+        OAuthCommunication.getAccessToken()
+    }
     
     // ===================================================================================
     // MARK:                    OVERRIDE FUNC
     // ===================================================================================
     override func viewDidLoad() {
         super.viewDidLoad()
+        drawScreen()
     }
     
     override func viewDidAppear(_ animated: Bool) {
