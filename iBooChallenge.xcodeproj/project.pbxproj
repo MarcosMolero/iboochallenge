@@ -55,13 +55,45 @@
 			isa = PBXGroup;
 			children = (
 				360356711E5D80FA00855F03 /* AppDelegate.swift */,
-				360356731E5D80FA00855F03 /* ViewController.swift */,
-				360356751E5D80FA00855F03 /* Main.storyboard */,
+				362EB4081E5D86A700B79C48 /* MODEL */,
+				362EB40A1E5D86B700B79C48 /* VIEW */,
+				362EB4091E5D86AE00B79C48 /* CONTROLLER */,
+				362EB40B1E5D86C700B79C48 /* Support Files */,
 				360356781E5D80FA00855F03 /* Assets.xcassets */,
-				3603567A1E5D80FA00855F03 /* LaunchScreen.storyboard */,
-				3603567D1E5D80FA00855F03 /* Info.plist */,
 			);
 			path = iBooChallenge;
+			sourceTree = "<group>";
+		};
+		362EB4081E5D86A700B79C48 /* MODEL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MODEL;
+			sourceTree = "<group>";
+		};
+		362EB4091E5D86AE00B79C48 /* CONTROLLER */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CONTROLLER;
+			sourceTree = "<group>";
+		};
+		362EB40A1E5D86B700B79C48 /* VIEW */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VIEW;
+			sourceTree = "<group>";
+		};
+		362EB40B1E5D86C700B79C48 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3603567A1E5D80FA00855F03 /* LaunchScreen.storyboard */,
+				360356751E5D80FA00855F03 /* Main.storyboard */,
+				360356731E5D80FA00855F03 /* ViewController.swift */,
+				3603567D1E5D80FA00855F03 /* Info.plist */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +331,7 @@
 				360356821E5D80FA00855F03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
