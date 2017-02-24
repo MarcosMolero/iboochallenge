@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class OAuthCommunication {
     
@@ -79,10 +80,44 @@ class OAuthCommunication {
         task.resume()
     }
     
-    
     static func getToken() -> String {
         let token:String = "UgtvNSFocedk9fsezHra4CUUe9hCN5tHXjugPL5bAZs31kdslbL5YdeQNGYKLLa28IcoPkLGgx/jF2FR08T4r1/slAk48kNeGMMdqwUSvcTx7z+h39ZXeQEpSvZqxzERlfEjYuHDXpnbK3ZvuBHjTevI7XeAHmV6UepNP4vDWOU=|77u/TjlwWS96aFo3bk5zZE91b3JTcTkKMjY2ODkKMTY0MjkyOTgKZXh1UEN3PT0KKzA1d0RRPT0KMQpiZWpmbjlyNHJqMjJkbXpzbnR2Ynp4YzkKODkuMTQwLjE4NC42MgowCgpleHVQQ3c9PQoyNjY4OQowCgoK|3"
         return token
+    }
+    
+    static func getListScopes() {
+        let url :String = "https://api.gettyimages.com/v3/search/images/creative?phrase="+"Barcelona"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "GET"
+        request.addValue("bejfn9r4rj22dmzsntvbzxc9", forHTTPHeaderField: "Api-Key")
+//        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print(request.debugDescription)
+            guard let data = data, error == nil else {
+                print("error=\(error)")
+                return
+            }
+            let statusCode = (response as! HTTPURLResponse).statusCode
+            print(response.debugDescription)
+            if statusCode != 200 {
+                print("statusCode should be 200, but is \(statusCode)")
+                print("response = \(response)")
+                print("request = \(request)")
+            }
+            
+            if statusCode == 200 {
+                
+                let dataString = String(data: data, encoding: String.Encoding.utf8)!
+                //                print("\n\(dataString)\n")
+                
+                if let parseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any] {
+                    //                    print("\n\(parseJSON!)\n")
+                }
+                
+            }
+        }
+        task.resume()
     }
     
     

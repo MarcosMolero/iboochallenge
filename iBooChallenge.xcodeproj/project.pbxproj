@@ -15,6 +15,7 @@
 		362EB40D1E5D886D00B79C48 /* InitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EB40C1E5D886D00B79C48 /* InitVC.swift */; };
 		362EB40F1E5D894400B79C48 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EB40E1E5D894400B79C48 /* InitView.swift */; };
 		362EB4111E5D8C6400B79C48 /* OAuthCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EB4101E5D8C6400B79C48 /* OAuthCommunication.swift */; };
+		A9DFC9398D97C2099BA9B02B /* Pods_iBooChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D8A744BAF9B718B4788078 /* Pods_iBooChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		362EB40C1E5D886D00B79C48 /* InitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitVC.swift; sourceTree = "<group>"; };
 		362EB40E1E5D894400B79C48 /* InitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
 		362EB4101E5D8C6400B79C48 /* OAuthCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthCommunication.swift; sourceTree = "<group>"; };
+		593EF7D5306B18F2B3104429 /* Pods-iBooChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		C7D8A744BAF9B718B4788078 /* Pods_iBooChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBooChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2C11AC7C40BC750143C2E7F /* Pods-iBooChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9DFC9398D97C2099BA9B02B /* Pods_iBooChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				360356701E5D80FA00855F03 /* iBooChallenge */,
 				3603566F1E5D80FA00855F03 /* Products */,
+				C3C3E241BE86B794073F706B /* Pods */,
+				CCBADBA7B46BED686C74C4BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,23 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		C3C3E241BE86B794073F706B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				593EF7D5306B18F2B3104429 /* Pods-iBooChallenge.debug.xcconfig */,
+				F2C11AC7C40BC750143C2E7F /* Pods-iBooChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCBADBA7B46BED686C74C4BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7D8A744BAF9B718B4788078 /* Pods_iBooChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 360356801E5D80FA00855F03 /* Build configuration list for PBXNativeTarget "iBooChallenge" */;
 			buildPhases = (
+				42FD5273E4AA2C34B46974DA /* [CP] Check Pods Manifest.lock */,
 				3603566A1E5D80FA00855F03 /* Sources */,
 				3603566B1E5D80FA00855F03 /* Frameworks */,
 				3603566C1E5D80FA00855F03 /* Resources */,
+				6FE42207D7C993FF84FD2A99 /* [CP] Embed Pods Frameworks */,
+				24733F7CC4F99F7747CBEEE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,6 +198,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24733F7CC4F99F7747CBEEE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42FD5273E4AA2C34B46974DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE42207D7C993FF84FD2A99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3603566A1E5D80FA00855F03 /* Sources */ = {
@@ -300,6 +375,7 @@
 		};
 		360356811E5D80FA00855F03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 593EF7D5306B18F2B3104429 /* Pods-iBooChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -313,6 +389,7 @@
 		};
 		360356821E5D80FA00855F03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2C11AC7C40BC750143C2E7F /* Pods-iBooChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
