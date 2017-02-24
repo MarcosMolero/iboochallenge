@@ -28,7 +28,7 @@ class InitVC: UIViewController, InitViewDelegate {
     // MARK:                    BUTTON FUNC
     // ===================================================================================
     func didPressBtnInit(_ sender: UIButton) {
-        OAuthCommunication.getAccessToken()
+        OAuthCommunication.getImages()
     }
     
     // ===================================================================================
