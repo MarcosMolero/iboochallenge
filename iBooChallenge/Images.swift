@@ -10,11 +10,11 @@ import Foundation
 
 class Images {
     
-    var id              :Int
+    var id              :String
     var asset_family    :String
     var caption         :String
     var collection_code :String
-    var collection_id   :String
+    var collection_id   :Int
     var collection_name :String
     var display_sizes   :[Display]
     var license_model   :String
@@ -22,11 +22,11 @@ class Images {
     var title           :String
     
     init() {
-        self.id                 = Int()
+        self.id                 = String()
         self.asset_family       = String()
         self.caption            = String()
         self.collection_code    = String()
-        self.collection_id      = String()
+        self.collection_id      = Int()
         self.collection_name    = String()
         self.display_sizes      = [Display]()
         self.license_model      = String()

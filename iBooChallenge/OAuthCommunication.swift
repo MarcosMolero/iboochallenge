@@ -62,15 +62,8 @@ class OAuthCommunication {
                     if ((response.response?.statusCode)! >= 200 && (response.response?.statusCode)! < 300) {
                         
                         let jsonObject = JSON(data: response.data!)
+                        parseJSON.parseImages(jsonObject)
                         
-                        
-                        print(jsonObject["result_count"])
-                        
-                        
-                        
-//                        print(jsonObject)
-
-//                       print(response.debugDescription)
                     }
                     break
                 case .failure(let error):

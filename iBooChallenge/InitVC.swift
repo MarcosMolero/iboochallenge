@@ -30,6 +30,7 @@ class InitVC: UIViewController, InitViewDelegate {
     func didPressBtnInit(_ sender: UIButton) {
         print("Tapped")
         OAuthCommunication.getImagesAlamofire()
+        
     }
     
     // ===================================================================================
