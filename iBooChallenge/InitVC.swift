@@ -14,6 +14,8 @@ class InitVC: UIViewController, InitViewDelegate {
     let screenW :CGFloat = UIScreen.main.bounds.width
     let screenH :CGFloat = UIScreen.main.bounds.height
     
+    let utilActivityIndicator: UtilActivityIndicator = UtilActivityIndicator()
+    
     // ===================================================================================
     // MARK:                    DRAW SCREEN
     // ===================================================================================
@@ -29,8 +31,25 @@ class InitVC: UIViewController, InitViewDelegate {
     // ===================================================================================
     func didPressBtnInit(_ sender: UIButton) {
         print("Tapped")
+        utilActivityIndicator.startActivityIndicator(utilActivityIndicator.showActivityIndicator(view))
         OAuthCommunication.getImagesAlamofire()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(InitVC.connectionError), name: NSNotification.Name(rawValue: connectionFailure), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(InitVC.dataIsAvailable), name: NSNotification.Name(rawValue: dataOk), object: nil)
+    }
+    
+    func dataIsAvailable() {
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: dataOk),object: nil)
+        self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
+
+        print("DataAvailable")
+    }
+    
+    func connectionError() {
+        NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: connectionFailure),object: nil)
+        self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
+
+        print("ConnectionError")
     }
     
     // ===================================================================================

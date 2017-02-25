@@ -10,6 +10,10 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+let dataOk              :String = "com.marcosmolero.dataOk"
+let connectionFailure   :String = "com.marcosmolero.connectionFailure"
+
+
 class OAuthCommunication {
     
     static func getImages() {
@@ -60,13 +64,12 @@ class OAuthCommunication {
                 switch response.result {
                 case .success:
                     if ((response.response?.statusCode)! >= 200 && (response.response?.statusCode)! < 300) {
-                        
                         let jsonObject = JSON(data: response.data!)
                         parseJSON.parseImages(jsonObject)
-                        
                     }
                     break
                 case .failure(let error):
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: connectionFailure), object: self)
                     print(error)
                     break
                 }

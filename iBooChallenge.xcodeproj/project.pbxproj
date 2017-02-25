@@ -20,6 +20,7 @@
 		36B701D71E618CF500C4E244 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B701D61E618CF500C4E244 /* Element.swift */; };
 		36B701D91E618D6C00C4E244 /* parseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B701D81E618D6C00C4E244 /* parseJSON.swift */; };
 		36B701DC1E61920200C4E244 /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B701DB1E61920200C4E244 /* AppSingleton.swift */; };
+		36B701DF1E61982B00C4E244 /* UtilActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B701DE1E61982B00C4E244 /* UtilActivityIndicator.swift */; };
 		A9DFC9398D97C2099BA9B02B /* Pods_iBooChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D8A744BAF9B718B4788078 /* Pods_iBooChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		36B701D61E618CF500C4E244 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		36B701D81E618D6C00C4E244 /* parseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parseJSON.swift; sourceTree = "<group>"; };
 		36B701DB1E61920200C4E244 /* AppSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
+		36B701DE1E61982B00C4E244 /* UtilActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilActivityIndicator.swift; sourceTree = "<group>"; };
 		593EF7D5306B18F2B3104429 /* Pods-iBooChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		C7D8A744BAF9B718B4788078 /* Pods_iBooChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBooChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C11AC7C40BC750143C2E7F /* Pods-iBooChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBooChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iBooChallenge/Pods-iBooChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				362EB4081E5D86A700B79C48 /* MODEL */,
 				362EB40A1E5D86B700B79C48 /* VIEW */,
 				362EB4091E5D86AE00B79C48 /* CONTROLLER */,
+				36B701DD1E6197FC00C4E244 /* Utils */,
 				362EB40B1E5D86C700B79C48 /* Support Files */,
 				360356781E5D80FA00855F03 /* Assets.xcassets */,
 			);
@@ -141,6 +144,14 @@
 				36B701DB1E61920200C4E244 /* AppSingleton.swift */,
 			);
 			name = Singleton;
+			sourceTree = "<group>";
+		};
+		36B701DD1E6197FC00C4E244 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				36B701DE1E61982B00C4E244 /* UtilActivityIndicator.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		C3C3E241BE86B794073F706B /* Pods */ = {
@@ -291,6 +302,7 @@
 				36B701DC1E61920200C4E244 /* AppSingleton.swift in Sources */,
 				360356741E5D80FA00855F03 /* ViewController.swift in Sources */,
 				362EB40D1E5D886D00B79C48 /* InitVC.swift in Sources */,
+				36B701DF1E61982B00C4E244 /* UtilActivityIndicator.swift in Sources */,
 				362EB4111E5D8C6400B79C48 /* OAuthCommunication.swift in Sources */,
 				360356721E5D80FA00855F03 /* AppDelegate.swift in Sources */,
 			);

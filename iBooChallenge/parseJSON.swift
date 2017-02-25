@@ -45,6 +45,7 @@ class parseJSON {
             element.images.append(image)
         }
         instanceAppSingleton.element = [element]
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: dataOk), object: self)
+
     }
 }
