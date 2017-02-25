@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class OAuthCommunication {
     
@@ -59,7 +60,17 @@ class OAuthCommunication {
                 switch response.result {
                 case .success:
                     if ((response.response?.statusCode)! >= 200 && (response.response?.statusCode)! < 300) {
-                       print(response.debugDescription)
+                        
+                        let jsonObject = JSON(data: response.data!)
+                        
+                        
+                        print(jsonObject["result_count"])
+                        
+                        
+                        
+//                        print(jsonObject)
+
+//                       print(response.debugDescription)
                     }
                     break
                 case .failure(let error):
