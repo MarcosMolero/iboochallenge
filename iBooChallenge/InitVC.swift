@@ -38,11 +38,16 @@ class InitVC: UIViewController, InitViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(InitVC.dataIsAvailable), name: NSNotification.Name(rawValue: dataOk), object: nil)
     }
     
+    // ===================================================================================
+    // MARK:                    SUPPORT FUNC
+    // ===================================================================================
     func dataIsAvailable() {
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: dataOk),object: nil)
         self.utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
 
         print("DataAvailable")
+        
+        self.present(ListVC(), animated: true, completion: nil)
     }
     
     func connectionError() {
