@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -67,12 +69,11 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         let cell = listView.tableView.dequeueReusableCell(withIdentifier: "ListViewTableViewCell") as! ListViewTableViewCell
        
         let listOfImages = instanceAppSingleton.element[0].images
-//        let listOfPhotos = listOfImages[indexPath.row].display_sizes[0].uri
+//        print("\(indexPath.row) " + "\(listOfImages[indexPath.row].display_sizes[0].uri)")
         
         
-        print("\(indexPath.row) " + "\(listOfImages[indexPath.row].display_sizes[0].uri)")
-
         cell.label.text = listOfImages[indexPath.row].title
+        
         
         
         return cell
@@ -88,6 +89,11 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         drawScreen()
+        
+        
+        OAuthCommunication.downloadImageAlamofire(id: "529992109")
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
