@@ -59,7 +59,7 @@ class TopView: UIView {
         btnLeft.addTarget(self, action: #selector(TopView.buttonLeftTapped(_:)), for: UIControlEvents.touchUpInside)
         
         let background  :UIImageView = UIImageView(frame: CGRect(x: backgroundX, y: backgroundY, width: backgroundW, height: backgroundH))
-        background.backgroundColor = UIColor.orange
+        background.backgroundColor = UIColor.white
         
         self.addSubview(background)
         self.addSubview(btnLeft)

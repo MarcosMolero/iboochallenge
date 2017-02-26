@@ -66,10 +66,13 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listView.tableView.dequeueReusableCell(withIdentifier: "ListViewTableViewCell") as! ListViewTableViewCell
        
-        let images = instanceAppSingleton.element[0].images
+        let listOfImages = instanceAppSingleton.element[0].images
+//        let listOfPhotos = listOfImages[indexPath.row].display_sizes[0].uri
         
         
-        cell.label.text = images[indexPath.row].title
+        print("\(indexPath.row) " + "\(listOfImages[indexPath.row].display_sizes[0].uri)")
+
+        cell.label.text = listOfImages[indexPath.row].title
         
         
         return cell

@@ -32,29 +32,25 @@ class ListViewTableViewCell: UITableViewCell {
         let photoX      :CGFloat = backgroundX
         let photoY      :CGFloat = backgroundY
         
-        let labelW      :CGFloat = backgroundW*0.4
+        let labelW      :CGFloat = backgroundW*0.7
         let labelH      :CGFloat = backgroundH
         let labelX      :CGFloat = photoX + photoW
         let labelY      :CGFloat = backgroundY
         
-        let favW        :CGFloat = backgroundW*0.3
-        let favH        :CGFloat = backgroundH
+        let favW        :CGFloat = fav.frame.size.width
+        let favH        :CGFloat = fav.frame.size.height
         let favX        :CGFloat = labelX + labelW
         let favY        :CGFloat = backgroundH/2 - favH/2
         
         photo = UIImageView(frame: CGRect(x: photoX, y: photoY, width: photoW, height: photoH))
-        photo.backgroundColor = UIColor.red
         
         label = UILabel(frame: CGRect(x: labelX, y: labelY, width: labelW, height: labelH))
-        label.backgroundColor = UIColor.yellow
+        label.numberOfLines = 0
         
         fav.frame = CGRect(x: favX, y: favY, width: favW, height: favH)
         fav.setOn(false, animated: true)
-        fav.tintColor = UIColor.blue
-        fav.onTintColor = UIColor.cyan
-        fav.thumbTintColor = UIColor.red
-        fav.backgroundColor = UIColor.yellow
-//        fav.addTarget(self, action: #selector(switchChanged(_:)), for: UIControlEvents.valueChanged)
+
+        //        fav.addTarget(self, action: #selector(switchChanged(_:)), for: UIControlEvents.valueChanged)
         
         contentView.addSubview(photo)
         contentView.addSubview(label)
