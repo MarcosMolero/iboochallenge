@@ -14,6 +14,8 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     let screenW :CGFloat = UIScreen.main.bounds.width
     let screenH :CGFloat = UIScreen.main.bounds.height
     
+    var listView    :ListView = ListView()
+    
     let instanceAppSingleton = AppSingleton.sharedInstance
     
     // ===================================================================================
@@ -35,7 +37,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         let listViewX   :CGFloat = topViewX
         let listViewY   :CGFloat = topViewY + topViewH
         
-        let listView    :ListView = ListView(frame: CGRect(x: listViewX, y: listViewY, width: listViewW, height: listViewH))
+        listView        = ListView(frame: CGRect(x: listViewX, y: listViewY, width: listViewW, height: listViewH))
         listView.delegate = self
         listView.tableView.delegate = self
         listView.tableView.dataSource = self
@@ -58,12 +60,16 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     // ===================================================================================
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewTableViewCell")!
+        let cell = listView.tableView.dequeueReusableCell(withIdentifier: "ListViewTableViewCell") as! ListViewTableViewCell
+       
+        let images = instanceAppSingleton.element[0].images
         
+        
+        cell.label.text = images[indexPath.row].title
         
         
         return cell

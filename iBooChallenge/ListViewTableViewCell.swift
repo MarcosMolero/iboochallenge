@@ -11,13 +11,13 @@ import UIKit
 
 class ListViewTableViewCell: UITableViewCell {
     
-    var photo   :UIImageView = UIImageView()
-    var label   :UILabel = UILabel()
-    var fav     :UISwitch = UISwitch()
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    var photo   :UIImageView = UIImageView()
+    var label   :UILabel = UILabel()
+    var fav     :UISwitch = UISwitch()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,7 +40,7 @@ class ListViewTableViewCell: UITableViewCell {
         let favW        :CGFloat = backgroundW*0.3
         let favH        :CGFloat = backgroundH
         let favX        :CGFloat = labelX + labelW
-        let favY        :CGFloat = backgroundY
+        let favY        :CGFloat = backgroundH/2 - favH/2
         
         photo = UIImageView(frame: CGRect(x: photoX, y: photoY, width: photoW, height: photoH))
         photo.backgroundColor = UIColor.red
