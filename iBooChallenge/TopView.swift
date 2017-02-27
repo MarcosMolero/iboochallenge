@@ -51,7 +51,7 @@ class TopView: UIView {
         label = UILabel(frame: CGRect(x: labelX, y: labelY, width: labelW, height: labelH))
         label.textAlignment = NSTextAlignment.center
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor.white
+        label.textColor = UIColor.black
         
         btnLeft     = UIButton(type: UIButtonType.custom)
         btnLeft.frame = CGRect(x: btnLeftX, y: btnLeftY, width: btnLeftW, height: btnLeftH)

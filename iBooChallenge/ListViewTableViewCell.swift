@@ -27,19 +27,19 @@ class ListViewTableViewCell: UITableViewCell {
         let backgroundX :CGFloat = 0
         let backgroundY :CGFloat = 0
         
-        let photoW      :CGFloat = backgroundW*0.3
+        let photoW      :CGFloat = backgroundW*0.2
         let photoH      :CGFloat = backgroundH
         let photoX      :CGFloat = backgroundX
         let photoY      :CGFloat = backgroundY
         
-        let labelW      :CGFloat = backgroundW*0.7
+        let labelW      :CGFloat = backgroundW*0.6
         let labelH      :CGFloat = backgroundH
         let labelX      :CGFloat = photoX + photoW
         let labelY      :CGFloat = backgroundY
         
         let favW        :CGFloat = fav.frame.size.width
         let favH        :CGFloat = fav.frame.size.height
-        let favX        :CGFloat = labelX + labelW
+        let favX        :CGFloat = backgroundW - favW
         let favY        :CGFloat = backgroundH/2 - favH/2
         
         photo = UIImageView(frame: CGRect(x: photoX, y: photoY, width: photoW, height: photoH))

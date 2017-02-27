@@ -32,7 +32,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         
         let topView     :TopView = TopView(frame: CGRect(x: topViewX, y: topViewY, width: topViewW, height: topViewH))
         topView.delegate = self
-        topView.label.text = "Images"
+        topView.label.text = "iBooChallenge"
         
         let listViewW   :CGFloat = screenW
         let listViewH   :CGFloat = screenH*0.9
@@ -45,6 +45,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         listView.tableView.dataSource = self
 
         self.view.addSubview(topView)
+        topView.addSubview(topView.label)
         self.view.addSubview(listView)
         listView.addSubview(listView.tableView)
     }
@@ -92,8 +93,6 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         
         
         OAuthCommunication.downloadImageAlamofire(id: "529992109")
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -104,4 +103,8 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }  
 }

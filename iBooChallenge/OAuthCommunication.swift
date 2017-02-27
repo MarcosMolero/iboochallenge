@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+let tokenSaved          :String = "com.marcosmolero.tokenSaved"
 let dataOk              :String = "com.marcosmolero.dataOk"
 let connectionFailure   :String = "com.marcosmolero.connectionFailure"
 
