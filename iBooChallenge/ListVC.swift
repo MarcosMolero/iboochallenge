@@ -63,7 +63,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     // ===================================================================================
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,15 +72,16 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         let listOfImages = instanceAppSingleton.element[0].images
 //        print("\(indexPath.row) " + "\(listOfImages[indexPath.row].display_sizes[0].uri)")
         
-        let imageUrl :URL = URL(string: "http://cache3.asset-cache.net/xt/613254526.jpg?v=1&g=fs1|0|EPL|54|526&s=1&b=RjI4")!
-        
-        cell.photo.af_setImage(withURL: imageUrl)
+//        let imageUrl :URL = URL(string: "http://cache3.asset-cache.net/xt/613254526.jpg?v=1&g=fs1|0|EPL|54|526&s=1&b=RjI4")!
+        //cell.photo.image = nil
+        cell.photo.af_setImage(withURL: URL(string: "https://httpbin.org/image/png")!)
         cell.label.text = listOfImages[indexPath.row].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Tapped")
+        self.present(DetailVC(), animated: true, completion: nil)
     }
     
     // ===================================================================================
