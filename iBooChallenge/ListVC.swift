@@ -72,11 +72,10 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         let listOfImages = instanceAppSingleton.element[0].images
 //        print("\(indexPath.row) " + "\(listOfImages[indexPath.row].display_sizes[0].uri)")
         
+        let imageUrl :URL = URL(string: "http://cache3.asset-cache.net/xt/613254526.jpg?v=1&g=fs1|0|EPL|54|526&s=1&b=RjI4")!
         
+        cell.photo.af_setImage(withURL: imageUrl)
         cell.label.text = listOfImages[indexPath.row].title
-        
-        
-        
         return cell
     }
     
@@ -92,7 +91,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         drawScreen()
         
         
-        OAuthCommunication.downloadImageAlamofire(id: "529992109")
+//        OAuthCommunication.downloadImageAlamofire(id: "529992109")
     }
     
     override func viewDidAppear(_ animated: Bool) {

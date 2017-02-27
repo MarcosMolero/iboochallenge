@@ -109,11 +109,11 @@ class OAuthCommunication {
     }
     
     static func downloadImageAlamofire(id:String) {
-        let token   :String = "VjsMwNIKwalulrdFHGXnr1RgqpwT6JpY7O/HubzE/4/8BAjfIy1rXaRWrvnNmjJQNwHFnwz51n8UPEF5nbId3aJewkeUiEWiaUWeDiO6yG7CqHgrdRj+pRp05k47Xwh9s5oIp3JXC6Bf7NDezxsfE8bnG+ijT7j/VTEOFD7vOw4=|77u/ZWl1UFFxeFhZZFdqcmlWSTYvZWQKMjY2ODkKMTY0MjkyOTgKU0p1VUN3PT0KeU01MURRPT0KMQpiZWpmbjlyNHJqMjJkbXpzbnR2Ynp4YzkKMi4xNTUuMTk3LjIwNQowCgpTSnVVQ3c9PQoyNjY4OQowCgoK|3"
+        let token       :String = UserDefaults.standard.string(forKey: "access_token")!
         
         let url         :URL = URL(string: "https://api.gettyimages.com/v3/downloads/images/"+"\(id)")!
         let header      :Dictionary = ["Api-Key": "bejfn9r4rj22dmzsntvbzxc9",
-                                       "Authorization":"Bearer \(token)"]
+                                       "Authorization":"bearer \(token)"]
         
         Alamofire.request(url, method: HTTPMethod.post, parameters: [:], encoding: JSONEncoding.default, headers: header)
             

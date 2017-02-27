@@ -43,9 +43,11 @@ class ListViewTableViewCell: UITableViewCell {
         let favY        :CGFloat = backgroundH/2 - favH/2
         
         photo = UIImageView(frame: CGRect(x: photoX, y: photoY, width: photoW, height: photoH))
+        photo.isUserInteractionEnabled = true
         
         label = UILabel(frame: CGRect(x: labelX, y: labelY, width: labelW, height: labelH))
         label.numberOfLines = 0
+        label.isUserInteractionEnabled = false
         
         fav.frame = CGRect(x: favX, y: favY, width: favW, height: favH)
         fav.setOn(false, animated: true)
