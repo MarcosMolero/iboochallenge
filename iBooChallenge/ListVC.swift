@@ -74,8 +74,13 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         
 //        let imageUrl :URL = URL(string: "http://cache3.asset-cache.net/xt/613254526.jpg?v=1&g=fs1|0|EPL|54|526&s=1&b=RjI4")!
         //cell.photo.image = nil
-        cell.photo.af_setImage(withURL: URL(string: "https://httpbin.org/image/png")!)
+        cell.photo.af_setImage(withURL: URL(string: "http://images.apple.com/apple-events/september-2016/video/poster_medium.jpg")!)
         cell.label.text = listOfImages[indexPath.row].title
+        
+        if listOfImages[indexPath.row].switched {
+            cell.fav.setOn(true, animated: false)
+        }
+        
         cell.fav.addTarget(self, action: #selector(switchChanged(_:)), for: UIControlEvents.valueChanged)
         cell.fav.tag = indexPath.row
 
@@ -83,15 +88,12 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tapped")
         self.present(DetailVC(), animated: true, completion: nil)
     }
     
     func switchChanged(_ sender:UISwitch) {
-        print("Changed \(sender.tag) !!")
         let listOfImages = instanceAppSingleton.element[0].images
         listOfImages[sender.tag].switched = true
-        
     }
     
     // ===================================================================================
@@ -100,8 +102,6 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         drawScreen()
-        
-        
 //        OAuthCommunication.downloadImageAlamofire(id: "529992109")
     }
     
