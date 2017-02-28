@@ -63,7 +63,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     // ===================================================================================
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return instanceAppSingleton.element[0].images.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,6 +109,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         drawScreen()
+        
 //        OAuthCommunication.downloadImageAlamofire(id: "529992109")
     }
     

@@ -17,37 +17,6 @@ let connectionFailure   :String = "com.marcosmolero.connectionFailure"
 
 class OAuthCommunication {
     
-    static func getImplicitGrant() {
-        let apiKey:String = "bejfn9r4rj22dmzsntvbzxc9"
-        
-        let url         :URL = URL(string: "https://api.gettyimages.com/oauth2/auth/")!
-        let body        :Dictionary = ["Api-Key": "bejfn9r4rj22dmzsntvbzxc9"]
-        
-        Alamofire.request(url, method: HTTPMethod.get, parameters: body, encoding: JSONEncoding.default, headers: [:])
-            
-            .validate()
-            
-            .responseJSON { response in
-                print(response.debugDescription)
-                
-                switch response.result {
-                case .success:
-                    if ((response.response?.statusCode)! >= 200 && (response.response?.statusCode)! < 300) {
-                        
-                        print(response.debugDescription)
-                        //                        let jsonObject = JSON(data: response.data!)
-                        //                        parseJSON.parseImages(jsonObject)
-                    }
-                    break
-                case .failure(let error):
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: connectionFailure), object: self)
-                    print(error)
-                    break
-                }
-        }
-        
-    }
-    
     static func getImages() {
         let url :String = "https://api.gettyimages.com/v3/search/images/creative?phrase="+"Barcelona"
         var request = URLRequest(url: URL(string: url)!)
@@ -84,7 +53,7 @@ class OAuthCommunication {
     }
     
     static func getImagesAlamofire() {
-        let url         :URL = URL(string: "https://api.gettyimages.com/v3/search/images/creative?phrase="+"Barcelona")!
+        let url         :URL = URL(string: "https://api.gettyimages.com/v3/search/images/creative?phrase="+"Coche")!
         let header      :Dictionary = ["Api-Key": "bejfn9r4rj22dmzsntvbzxc9"]
         
         Alamofire.request(url, method: HTTPMethod.get, parameters: [:], encoding: URLEncoding.default, headers: header)
@@ -96,6 +65,7 @@ class OAuthCommunication {
                 switch response.result {
                 case .success:
                     if ((response.response?.statusCode)! >= 200 && (response.response?.statusCode)! < 300) {
+                        print(response.debugDescription)
                         let jsonObject = JSON(data: response.data!)
                         parseJSON.parseImages(jsonObject)
                     }
