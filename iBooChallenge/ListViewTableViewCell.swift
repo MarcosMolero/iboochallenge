@@ -47,6 +47,7 @@ class ListViewTableViewCell: UITableViewCell {
         
         label = UILabel(frame: CGRect(x: labelX, y: labelY, width: labelW, height: labelH))
         label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         label.isUserInteractionEnabled = false
         
         fav.frame = CGRect(x: favX, y: favY, width: favW, height: favH)

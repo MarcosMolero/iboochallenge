@@ -43,7 +43,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         listView.delegate = self
         listView.tableView.delegate = self
         listView.tableView.dataSource = self
-
+        
         self.view.addSubview(topView)
         topView.addSubview(topView.label)
         self.view.addSubview(listView)
@@ -68,21 +68,18 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listView.tableView.dequeueReusableCell(withIdentifier: "ListViewTableViewCell") as! ListViewTableViewCell
-       
         let listOfImages = instanceAppSingleton.element[0].images
-//        print("\(indexPath.row) " + "\(listOfImages[indexPath.row].display_sizes[0].uri)")
+
+        cell.photo.af_setImage(withURL: getCorrectURLFrom(imageString: listOfImages[indexPath.row].display_sizes[0].uri))
         
-//        let imageUrl :URL = URL(string: "http://cache3.asset-cache.net/xt/613254526.jpg?v=1&g=fs1|0|EPL|54|526&s=1&b=RjI4")!
-        //cell.photo.image = nil
-        cell.photo.af_setImage(withURL: URL(string: "http://images.apple.com/apple-events/september-2016/video/poster_medium.jpg")!)
         cell.label.text = listOfImages[indexPath.row].title
+        
+        cell.fav.addTarget(self, action: #selector(switchChanged(_:)), for: UIControlEvents.valueChanged)
+        cell.fav.tag = indexPath.row
         
         if listOfImages[indexPath.row].switched {
             cell.fav.setOn(true, animated: false)
         }
-        
-        cell.fav.addTarget(self, action: #selector(switchChanged(_:)), for: UIControlEvents.valueChanged)
-        cell.fav.tag = indexPath.row
 
         return cell
     }
@@ -91,9 +88,19 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         self.present(DetailVC(), animated: true, completion: nil)
     }
     
+    // ===================================================================================
+    // MARK:                    SUPPORT FUNC
+    // ===================================================================================
     func switchChanged(_ sender:UISwitch) {
         let listOfImages = instanceAppSingleton.element[0].images
         listOfImages[sender.tag].switched = true
+    }
+    
+    func getCorrectURLFrom(imageString:String) -> URL {
+        let escapedString = imageString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let url :URL = URL(string: escapedString!)!
+        
+        return url
     }
     
     // ===================================================================================
