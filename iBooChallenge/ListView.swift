@@ -51,7 +51,6 @@ class ListView: UIView {
         tableView.register(ListViewTableViewCell.self, forCellReuseIdentifier: "ListViewTableViewCell")
         tableView.backgroundColor = UIColor.cyan
         
-        
         let background  :UIImageView = UIImageView(frame: CGRect(x: backgroundX, y: backgroundY, width: backgroundW, height: backgroundH))
         background.backgroundColor = UIColor.blue
         

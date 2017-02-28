@@ -41,6 +41,7 @@ class parseJSON {
             image.title             = item["title"].stringValue
             image.collection_name   = item["collection_name"].stringValue
             image.caption           = item["caption"].stringValue
+            image.switched          = false
             
             element.images.append(image)
         }

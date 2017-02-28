@@ -51,8 +51,6 @@ class ListViewTableViewCell: UITableViewCell {
         
         fav.frame = CGRect(x: favX, y: favY, width: favW, height: favH)
         fav.setOn(false, animated: true)
-
-        //        fav.addTarget(self, action: #selector(switchChanged(_:)), for: UIControlEvents.valueChanged)
         
         contentView.addSubview(photo)
         contentView.addSubview(label)

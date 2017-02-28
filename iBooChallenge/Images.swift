@@ -20,6 +20,7 @@ class Images {
     var license_model   :String
     var max_dimensions  :String
     var title           :String
+    var switched        :Bool
     
     init() {
         self.id                 = String()
@@ -32,5 +33,6 @@ class Images {
         self.license_model      = String()
         self.max_dimensions     = String()
         self.title              = String()
+        self.switched           = Bool()
     }
 }

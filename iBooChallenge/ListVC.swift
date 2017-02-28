@@ -76,12 +76,22 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         //cell.photo.image = nil
         cell.photo.af_setImage(withURL: URL(string: "https://httpbin.org/image/png")!)
         cell.label.text = listOfImages[indexPath.row].title
+        cell.fav.addTarget(self, action: #selector(switchChanged(_:)), for: UIControlEvents.valueChanged)
+        cell.fav.tag = indexPath.row
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Tapped")
         self.present(DetailVC(), animated: true, completion: nil)
+    }
+    
+    func switchChanged(_ sender:UISwitch) {
+        print("Changed \(sender.tag) !!")
+        let listOfImages = instanceAppSingleton.element[0].images
+        listOfImages[sender.tag].switched = true
+        
     }
     
     // ===================================================================================
