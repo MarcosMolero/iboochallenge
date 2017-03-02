@@ -44,9 +44,9 @@ class WebViewController: UIViewController, UIWebViewDelegate {
             let token_type      = urlParts[1].components(separatedBy: "&")[1].components(separatedBy: "=")[1]
             let expires_in      = urlParts[1].components(separatedBy: "&")[2].components(separatedBy: "=")[1]
             
+            // Comprobar el Access_token.
+            
             saveToken(access_token, token_type, expires_in)
-        }else{
-            print("Se ha producido un error en solicitar el access_token")
         }
         
         return true
@@ -102,7 +102,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name(rawValue: tokenSaved),object: nil)
         if UserDefaults.standard.object(forKey: "access_token") != nil {
             utilActivityIndicator.stopActivityIndicator(self.utilActivityIndicator.actInd)
-            
+            print("Token: \(UserDefaults.standard.object(forKey: "access_token"))")
             self.present(InitVC(), animated: true, completion: nil)
         }
     }
