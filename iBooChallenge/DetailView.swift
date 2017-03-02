@@ -15,8 +15,8 @@ protocol DetailViewDelegate {
 
 class DetailView: UIView {
     
-    var label       :UILabel  = UILabel()
-    var btnLeft     :UIButton = UIButton()
+    var viewOne :UIImageView = UIImageView()
+    var fav     :UISwitch = UISwitch()
     
     var delegate: DetailViewDelegate!
     
@@ -56,7 +56,7 @@ class DetailView: UIView {
         let viewFourX       :CGFloat = viewThreeW + viewThreeX
         let viewFourY       :CGFloat = viewOneY + viewOneH
         
-        let viewOne         :UIView = UIView(frame: CGRect(x: viewOneX, y: viewOneY, width: viewOneW, height: viewOneH))
+        viewOne             = UIImageView(frame: CGRect(x: viewOneX, y: viewOneY, width: viewOneW, height: viewOneH))
         viewOne.backgroundColor = UIColor.blue
         
         let viewTwo         :UIView = UIView(frame: CGRect(x: viewTwoX, y: viewTwoY, width: viewTwoW, height: viewTwoH))

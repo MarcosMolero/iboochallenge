@@ -16,6 +16,8 @@ class DetailVC:UIViewController, TopViewDelegate, DetailViewDelegate {
     
     let instanceAppSingleton = AppSingleton.sharedInstance
     
+    static var actualImage :Images = Images()
+    
     // ===================================================================================
     // MARK:                    DRAW SCREEN
     // ===================================================================================
@@ -37,6 +39,7 @@ class DetailVC:UIViewController, TopViewDelegate, DetailViewDelegate {
         
         let detailView  :DetailView = DetailView(frame: CGRect(x: detailViewX, y: detailViewY, width: detailViewW, height: detailViewH))
         detailView.delegate = self
+        detailView.viewOne.af_setImage(withURL: UtilURL.getCorrectURLFrom(imageString: DetailVC.actualImage.display_sizes[0].uri))
         
         self.view.addSubview(topView)
         topView.addSubview(topView.label)

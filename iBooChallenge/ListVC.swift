@@ -70,7 +70,7 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
         let cell = listView.tableView.dequeueReusableCell(withIdentifier: "ListViewTableViewCell") as! ListViewTableViewCell
         let listOfImages = instanceAppSingleton.element[0].images
 
-        cell.photo.af_setImage(withURL: getCorrectURLFrom(imageString: listOfImages[indexPath.row].display_sizes[0].uri))
+        cell.photo.af_setImage(withURL: UtilURL.getCorrectURLFrom(imageString: listOfImages[indexPath.row].display_sizes[0].uri))
         
         cell.label.text = listOfImages[indexPath.row].title
         
@@ -85,6 +85,10 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let listOfImages = instanceAppSingleton.element[0].images
+        
+        DetailVC.actualImage = listOfImages[indexPath.row]
+        
         self.present(DetailVC(), animated: true, completion: nil)
     }
     
@@ -94,13 +98,6 @@ class ListVC :UIViewController, TopViewDelegate, ListViewDelegate, UITableViewDe
     func switchChanged(_ sender:UISwitch) {
         let listOfImages = instanceAppSingleton.element[0].images
         listOfImages[sender.tag].switched = true
-    }
-    
-    func getCorrectURLFrom(imageString:String) -> URL {
-        let escapedString = imageString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let url :URL = URL(string: escapedString!)!
-        
-        return url
     }
     
     // ===================================================================================
