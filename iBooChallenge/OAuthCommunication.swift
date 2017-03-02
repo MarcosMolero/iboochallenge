@@ -53,7 +53,7 @@ class OAuthCommunication {
     }
     
     static func getImagesAlamofire() {
-        let url         :URL = URL(string: "https://api.gettyimages.com/v3/search/images/creative?phrase="+"Coche")!
+        let url         :URL = URL(string: "https://api.gettyimages.com/v3/search/images/creative?phrase="+"Barcelona")!
         let header      :Dictionary = ["Api-Key": "bejfn9r4rj22dmzsntvbzxc9"]
         
         Alamofire.request(url, method: HTTPMethod.get, parameters: [:], encoding: URLEncoding.default, headers: header)

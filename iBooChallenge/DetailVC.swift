@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DetailVC:UIViewController, TopViewDelegate {
+class DetailVC:UIViewController, TopViewDelegate, DetailViewDelegate {
     
     let screenW :CGFloat = UIScreen.main.bounds.width
     let screenH :CGFloat = UIScreen.main.bounds.height
@@ -30,8 +30,17 @@ class DetailVC:UIViewController, TopViewDelegate {
         topView.delegate = self
         topView.label.text = "iBooChallenge"
         
+        let detailViewW :CGFloat = screenW
+        let detailViewH :CGFloat = screenH*0.9
+        let detailViewX :CGFloat = topViewX
+        let detailViewY :CGFloat = topViewY + topViewH
+        
+        let detailView  :DetailView = DetailView(frame: CGRect(x: detailViewX, y: detailViewY, width: detailViewW, height: detailViewH))
+        detailView.delegate = self
+        
         self.view.addSubview(topView)
         topView.addSubview(topView.label)
+        self.view.addSubview(detailView)
     }
     
     func didPressBtnLeft(_ button: UIButton) {
