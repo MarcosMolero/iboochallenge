@@ -14,7 +14,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     var webView                 :UIWebView!
     let utilActivityIndicator   :UtilActivityIndicator = UtilActivityIndicator()
     
-    let api_key         = "bejfn9r4rj22dmzsntvbzxc9"
+    let api_key         = "API_KEY"
     let redirect_uri    = "https://api.gettyimages.com?"
     let authorize       = "https://api.gettyimages.com/oauth2/auth?"
     
